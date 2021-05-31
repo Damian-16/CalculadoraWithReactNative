@@ -24,12 +24,19 @@ export  const styles = StyleSheet.create({
         textAlign:'right'
 
     },
+    row:{
+        flexDirection:"row",
+        justifyContent:'center',
+        marginBottom:18,
+        paddingHorizontal:10
+    },
     button:{
         height:40,
         width:40,
-        backgroundColor:'#333333',
+        backgroundColor:'#2D2D2D',
         borderRadius:100,
         justifyContent:"center",
+        marginHorizontal:10
     },
     buttonText:{
     textAlign:'center',
