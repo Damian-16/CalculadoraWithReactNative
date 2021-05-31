@@ -41,6 +41,7 @@ const armarNumero =(numeroTexto:string)=>{
 }
 
 
+
 const positivoNegativo =()=>{
     if(numero.includes('-')){
         setNumero(numero.replace('-',''));
@@ -51,6 +52,22 @@ const positivoNegativo =()=>{
 }
 
 
+const btnDelete =()=>{
+    //usamos los numeros negativos como si fueran positivos
+    let negativo ='';
+    let numeroTemp = numero;
+    if(numero.includes('-')){
+        negativo ='-';
+        numeroTemp = numero.substr(1);
+    }
+    //aca ya borramos de a unidad
+    if( numeroTemp.length > 1 ){
+        setNumero(negativo + numeroTemp.slice(0,-1));
+
+    }else{
+        setNumero('0');
+    }
+}
 
 
 
@@ -65,7 +82,7 @@ const positivoNegativo =()=>{
             <View style={styles.row}>
                 <BotonCalc texto="C"  accion={limpiar} color="#9B9B9B"/>
                 <BotonCalc texto="+/-" color="#9B9B9B" accion={positivoNegativo}/>
-                <BotonCalc texto="del" color="#9B9B9B" accion={limpiar}/>
+                <BotonCalc texto="del" color="#9B9B9B" accion={btnDelete}/>
                 <BotonCalc texto="/" color="#FF9427" accion={limpiar}/>
             </View>
 
